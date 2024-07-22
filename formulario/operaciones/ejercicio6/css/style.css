@@ -1,0 +1,73 @@
+#rectangulo {
+    margin-left: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .area{
+    margin-left: 20px;
+  }
+  #rectangulo i {
+
+    font-size: 100px; /* Ajusta el tamaño del icono */
+  }
+  #rectangulo .altura {
+    margin-left: 10px; /* Añadir espacio entre el icono y el texto */
+    margin-bottom: 50px;
+    margin-right: 80px;
+  }
+  .base{
+    margin-left: 50px;
+    
+}
+
+#triangulo {
+    margin-left: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #triangulo i {
+    font-size: 100px; /* Ajusta el tamaño del icono */
+  }
+  #triangulo .altura {
+    margin-left: 10px; /* Añadir espacio entre el icono y el texto */
+    margin-bottom: 50px;
+    margin-right: 70px;
+  }
+  #cuadrado {
+    margin-left: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #cuadrado i {
+    font-size: 100px; /* Ajusta el tamaño del icono */
+  }
+  #cuadrado .lado {
+    margin-left: 15px; /* Añadir espacio entre el icono y el texto */
+    margin-bottom: 10px;
+    margin-right: 50px;
+  }
+
+.formulario{
+    display: flexbox;
+    flex-wrap: nowrap;
+    margin: 10px;
+    padding: 5px 15px;
+    border-radius: 6px;
+}
+
+.forma, .respuesta{
+    border: 2px solid black;
+    border-radius: 6px;
+}
+
+.forma{
+    padding: 30px;
+}
+
+
+.valid-feedback{
+    font-weight: 900;
+}

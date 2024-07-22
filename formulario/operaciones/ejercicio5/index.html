@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="col-10 row formulario ">
+            <div class="col-8 forma">
+                <form class="g-3 row needs-validation" method="#" novalidate onsubmit="return prome();">
+                    <div class="text-center">
+                        <h2>Sacar el porcentaje y promedio de 3 notas.</h2>
+                    </div>
+                    
+                    <div class="col-md-3">
+                        <label for="txtNotaUno" class="form-label">Nota 1 (Vale el 30% del promedio)</label>
+                        <input type="number" class="form-control" id="txtNotaUno" value="" required>
+                        <div class="valid-feedback">
+                            Correcto !
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <label for="txtNotaDos" class="form-label">Nota 2 (Vale el 30% del promedio)</label>
+                        <input type="number" class="form-control" id="txtNotaDos" value="" required>
+                        <div class="valid-feedback">
+                            Correcto !
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <label for="txtNotaTres" class="form-label">Nota 3 (Vale el 40% del promedio)</label>
+                        <input type="number" class="form-control" id="txtNotaTres" value="" required>
+                        <div class="valid-feedback">
+                            Correcto !
+                        </div>
+                    </div>
+                    <div class="col-10">
+                        <button class="btn btn-primary" type="submit">Calcular</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-4 respuesta">
+                <div class="col-12">
+                    <h4>Respuesta</h4>
+                </div>
+                <div id="promedio">
+
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
+    <script src="js/notas.js"></script>
+    <script src="js/validate.js"></script>
+    <script src="bootstrap/js/bootstrap.bundle.js"></script>
+</body>
+</html>

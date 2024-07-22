@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Areas de cuadrados</title>
+</head>
+<body>
+    <script>
+        let cua1, cua2, cua3;
+        let lado1=8, lado2=6, lado3=5;
+
+        cua1=lado1*lado1;
+        cua2=lado2*lado2;
+        cua3=lado3*lado3;
+
+        if(cua1 == cua2 && cua2== cua3){
+            console.log("El area de los triangulos son iguales");
+        }else{
+            if(cua1 > cua2 && cua1 > cua3){
+                console.log("El area del primer cuadrado es mayor");
+            }
+            else{
+                if(cua2 > cua1 && cua2 > cua3){
+                console.log("El area del segundo cuadrado es mayor");
+            }else{
+                console.log("El area del tercer cuadrado es mayor");
+            }
+            
+        }
+        }
+    </script>
+</body>
+</html>

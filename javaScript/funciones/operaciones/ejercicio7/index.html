@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sueldo</title>
+    <script src="js/sueldo.js"></script>
+</head>
+<body>
+    <script>
+        let diasTrabajados= 20
+        let valorDia= 20
+
+        let salarioPersona=sueldo(diasTrabajados,valorDia)
+        let pago=pagoTotal(diasTrabajados,valorDia);
+        console.log("El pago total es: "+ pago)
+        let salarioPersonaExp=sueldoExp(diasTrabajados,valorDia);
+        let pagoExp= pagoTotalExp(diasTrabajados,valorDia);
+        console.log("El pago total es: "+pagoExp);
+    </script>
+</body>
+</html>

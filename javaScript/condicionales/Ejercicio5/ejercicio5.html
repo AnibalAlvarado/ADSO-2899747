@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let edad1,edad2,edad3, suma, promedio;
+        let fechaAct=2024, fechaNa1=2000,fechaNa2=1999,fechaNa3=2009;
+        
+        edad1= fechaAct - fechaNa1;
+        edad2= fechaAct - fechaNa2;
+        edad3= fechaAct - fechaNa3;
+
+        suma=edad1+edad2+edad3;
+        promedio=parseInt(suma/3);
+
+        if(edad1>=18){
+            console.log("el primero es mayor de edad");
+        }else{
+            console.log("el primero es menor de edad");
+        }if(edad2>=18){
+            console.log("el segundo es mayor de edad");
+        }else{
+            console.log("el segundo es menor de edad");
+        }if(edad3>=18){
+            console.log("el tercer es mayor de edad");
+        }else{
+            console.log("el tercer es menor de edad");
+        }
+        if(promedio>=18){
+            console.log("El promedio: "+promedio+" es mayor de edad");
+        }else{
+            console.log("El promedio: "+promedio+" es menor de edad");
+        }
+        
+    </script>
+</body>
+</html>

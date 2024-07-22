@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salario</title>
+</head>
+<body>
+    <script>
+        let Salario, diasTrabajados=30, valorDia=2000;
+        let salud, pension, arl, descuento, pagoTotal;
+
+        Salario=diasTrabajados*valorDia;
+        salud=Salario*0.12
+        pension=Salario*0.16
+        arl=Salario*0.052
+        descuento=salud+pension+arl
+        pagoTotal= Salario-descuento;
+
+        console.log("El descuento de salud es: "+salud+"\n");
+        console.log("El descuento de la pension es: "+pension+"\n");
+        console.log("El descuento de arl es: "+arl+"\n");
+        console.log("El pago total es: "+pagoTotal+"\n");
+    </script>
+</body>
+</html>

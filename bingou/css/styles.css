@@ -1,0 +1,117 @@
+.container {
+   
+    gap: 5px;
+    margin-top: 40px;
+  }
+.row{
+    margin-top: 10px;
+}
+.table {
+    width: 10px;
+    height: 10px;
+    border: 2px solid #007bff;
+    border-radius: 10px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.table td {
+    font-size: 15px; /* Ajusta el tamaño de la fuente si es necesario */
+    padding: 15px; /* Ajusta el padding para controlar el tamaño de la celda */
+    text-align: center;
+    width: 1%; /* Hace que las celdas tengan el mismo ancho */
+}
+.table th{
+  font-family: "Permanent Marker", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.bingou-two table td.violet {   
+    background-color: rgba(174, 111, 233, 0.886);
+    font-family: "Permanent Marker", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+.bingou-three table td.green {   
+    background-color: rgba(125, 233, 111, 0.886);
+    font-family: "Permanent Marker", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .bingou-four table td.red {   
+    background-color: rgba(235, 91, 91, 0.886);
+    font-family: "Permanent Marker", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .bingou-four table th.red {   
+    background-color: rgba(235, 91, 91, 0.886);
+    font-family: "Permanent Marker", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .bingou-five table td.yellow {   
+    background-color: rgba(230, 233, 92, 0.886);
+    font-family: "Permanent Marker", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .bingou-five table th.yellow {   
+    background-color: rgba(230, 233, 92, 0.886);
+    font-family: "Permanent Marker", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .bingou-six table td.green {   
+    background-color: rgba(125, 233, 111, 0.886);
+    font-family: "Permanent Marker", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .bingou-six table th.green {   
+    background-color: rgba(125, 233, 111, 0.886);
+    font-family: "Permanent Marker", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .bingou-seven table td.blue {   
+    background-color: rgba(111, 170, 233, 0.886);
+    font-family: "Permanent Marker", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .bingou-seven table th.blue {   
+    background-color: rgba(111, 170, 233, 0.886);
+    font-family: "Permanent Marker", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .bingou-eight table td.violet {   
+    background-color: rgba(174, 111, 233, 0.886);
+    font-family: "Permanent Marker", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .bingou-eight table th.violet {   
+    background-color: rgba(174, 111, 233, 0.886);
+    font-family: "Permanent Marker", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }

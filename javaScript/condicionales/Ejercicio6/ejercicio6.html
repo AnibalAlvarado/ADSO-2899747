@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promedio notas</title>
+</head>
+<body>
+    <script>
+        let nota1=3.0, nota2=2.0, nota3=3.0;
+        let reNota1, reNota2, reNota3;
+        let suma;
+
+        reNota1=(nota1*20)/100;
+        reNota2=(nota2*35)/100;
+        reNota3=(nota3*45)/100;
+
+        suma=parseFloat(reNota1+reNota2+reNota3);
+
+        if(suma > 4.5){
+            console.log("La nota es superior");
+        }else if (suma <= 4.5 && suma > 3.5){
+            console.log("La nota es buena");   
+        }else if(suma <= 3.5 && suma >=3){
+            console.log("La nota es media");
+        }else{
+            console.log("La nota es mala");
+        }
+        console.log(suma);
+    </script>
+</body>
+</html>

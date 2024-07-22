@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let contar,multi,par,impar,tabla
+        tabla=0
+        impar=0
+        par=0
+        for(tabla=1;tabla<=5;tabla++){
+            contar=1
+            for(contar=1;contar<=5;contar++){
+                multi= tabla*contar
+                if(multi % 2 == 0){
+                    console.log(tabla+"*"+contar+"="+multi+"buzz")
+                    par= par+1
+                }else{
+                    console.log(tabla+"*"+contar+"="+multi+"bass")
+                    impar= impar+1
+                }
+            }
+        }
+        console.log("La cantidad de pares es: "+par)
+        console.log("La cantidad de impares es: "+impar)
+    </script>
+</body>
+</html>

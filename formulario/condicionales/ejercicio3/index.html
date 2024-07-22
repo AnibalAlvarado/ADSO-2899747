@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+<body>
+    <div class="container">
+        <div class="col-10 row formulario">
+            <div class="col-8 forma">
+                <form class="g-3 row needs-validation" method="#" novalidate onsubmit="return mayorMenor();">
+                    
+                    <div class="col-md-4">
+                        <label for="txtNumeroUno" class="form-label">Numero 1</label>
+                        <input type="number" class="form-control" id="txtNumeroUno"  value="" required>
+                        <div class="valid-feedback">
+                            Correcto numero Uno!
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="txtNumeroDos" class="form-label">Numero 2</label>
+                        <input type="number" class="form-control" id="txtNumeroDos" value="" required>
+                        <div class="valid-feedback">
+                            Correcto numero Dos!
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="col-10">
+                        <button class="btn btn-primary" type="submit">enviar</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-4 respuesta">
+                <div class="col-12">
+                    <h4>Respuesta</h4>
+                </div>
+                <div id="mayomeno">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/menorMayor.js"></script>
+    <script src="js/validate.js"></script>
+    <script src="bootstrap/js/bootstrap.bundle.js"></script>
+</body>
+</html>
