@@ -1,276 +1,211 @@
 let bingo=[]
 let cont3=0
 let numx=[];
-
+let ramdomm;
+let numExisten=[]
+const xPatrones = [
+    // Patrón para una X
+    [
+        {filass: 1, columnass: 0}, {filass: 1, columnass: 4},
+        {filass: 2, columnass: 1}, {filass: 2, columnass: 3},
+        {filass: 3, columnass: 2},
+        {filass: 4, columnass: 1}, {filass: 4, columnass: 3},
+        {filass: 5, columnass: 0}, {filass: 5, columnass: 4}
+    ],
+    // Patrones para tres X
+    [
+        {filass: 1, columnass: 0}, {filass: 1, columnass: 2}, {filass: 1, columnass: 4},
+        {filass: 2, columnass: 1}, {filass: 2, columnass: 3},
+        {filass: 3, columnass: 0}, {filass: 3, columnass: 2}, {filass: 3, columnass: 4},
+        {filass: 4, columnass: 1},
+        {filass: 5, columnass: 0}, {filass: 5, columnass: 2}
+    ]
+];
 document.addEventListener('DOMContentLoaded', function () {
-for (let i = 0; i < 6; i++) {
-    bingo[i] = [];
-    for (let j = 0; j < 6; j++) {
-        if(i==0 && j==0){
-            bingo[i][j] = "B";
+for (let filass = 0; filass < 6; filass++) {
+    bingo[filass] = [];
+    for (let columnass = 0; columnass < 6; columnass++) {
+        if(filass==0 && columnass==0){
+            bingo[filass][columnass] = "B";
         }
-        if(i==0 && j==1){
-            bingo[i][j] = "I";
+        if(filass==0 && columnass==1){
+            bingo[filass][columnass] = "I";
         }
-        if(i==0 && j==2){
-            bingo[i][j] = "N";
+        if(filass==0 && columnass==2){
+            bingo[filass][columnass] = "N";
         }
-        if(i==0 && j==3){
-            bingo[i][j] = "G";
+        if(filass==0 && columnass==3){
+            bingo[filass][columnass] = "G";
         }
-        if(i==0 && j==4){
-            bingo[i][j] = "O";
+        if(filass==0 && columnass==4){
+            bingo[filass][columnass] = "O";
         }
-        if(j==0 && i>0){
-            let ramdomm= Math.floor(Math.random()*15)+1
-            bingo[i][j] = ramdomm;
-        }else if(j==1 && i>0){
-            let ramdomm= Math.floor(Math.random()*(30-15)+1)+15
-            bingo[i][j] = ramdomm;
-        }else if(j==2 && i>0){
-            let ramdomm= Math.floor(Math.random()*(45-30)+1)+30
-            bingo[i][j] = ramdomm;
-        }else if(j==3 && i>0){
-            let ramdomm= Math.floor(Math.random()*(60-45)+1)+45
-            bingo[i][j] = ramdomm;
-        }else if(j==4 && i>0){
-            let ramdomm= Math.floor(Math.random()*(75-60)+1)+60
-            bingo[i][j] = ramdomm;
+        if(columnass==0 && filass>0){
+            do {
+                ramdomm = Math.floor(Math.random() * 15) + 1;
+              } while (numExisten.includes(ramdomm));
+              bingo[filass][columnass] = ramdomm;
+              numExisten.push(ramdomm);
+            
+        }else if(columnass==1 && filass>0){
+             do {
+                ramdomm= Math.floor(Math.random()*(30-15)+1)+15
+              } while (numExisten.includes(ramdomm));
+              bingo[filass][columnass] = ramdomm;
+              numExisten.push(ramdomm);
+        }else if(columnass==2 && filass>0){
+             
+             do {
+                ramdomm= Math.floor(Math.random()*(45-30)+1)+30
+              } while (numExisten.includes(ramdomm));
+              bingo[filass][columnass] = ramdomm;
+              numExisten.push(ramdomm);
+        }else if(columnass==3 && filass>0){
+             
+             do {
+                ramdomm= Math.floor(Math.random()*(60-45)+1)+45
+              } while (numExisten.includes(ramdomm));
+              bingo[filass][columnass] = ramdomm;
+              numExisten.push(ramdomm);
+        }else if(columnass==4 && filass>0){
+             
+             do {
+                ramdomm= Math.floor(Math.random()*(75-60)+1)+60
+              } while (numExisten.includes(ramdomm));
+              bingo[filass][columnass] = ramdomm;
+              numExisten.push(ramdomm);
         }
     }
   }
-  for (let i = 0; i < 6; i++) {
-    let fila = "";
-    for (let j = 0; j < 5; j++) {
-      fila += bingo[i][j] + "\t";
-    }
-    console.log(fila);
-  }
-  let card2=""
-  let card=""
-  let card3=""
-  let card4=""
-  let card5=""
-  let card6=""
-  let card7=""
-  let card8=""
-
   
+  let card=""
 //tablero bingo normal
 card += "<thead><tr>";
-for (let i = 0; i < 5; i++) { // solo itera las 5 columnas del header
-  card += "<th>" + bingo[0][i] + "</th>";
+for (let filass = 0; filass < 5; filass++) { // solo itera las 5 columnas del header
+  card += "<th>" + bingo[0][filass] + "</th>";
 }
 card += "</tr></thead>";
 
 card += "<tbody>";
-for (let i = 1; i < 6; i++) { // Inicia en la fila 1 (la segunda fila)
+for (let filass = 1; filass < 6; filass++) { // Inicia en la fila 1 (la segunda fila)
   card += "<tr>";
-  for (let j = 0; j < 5; j++) {
-    card += "<td>" + bingo[i][j] + "</td>";
+  for (let columnass = 0; columnass < 5; columnass++) {
+    card += "<td>" + bingo[filass][columnass] + "</td>";
   }
   card += "</tr>"; // cierra '<tr>'
 }
 card += "</tbody>";
 //fin tablero bingo normal
 
-
-// primera X
-card2 += "<thead><tr>";
-for (let i = 0; i < 5; i++) { // solo itera las 5 columnas del header
-    card2 += "<th>" + bingo[0][i] + "</th>";
-  }
-  card2 += "</tr></thead>";
-  
-  card2 += "<tbody>";
-  for (let i = 1; i < 6; i++) { // Inicia en la fila 1 (la segunda fila)
-    card2 += "<tr>";
-    for (let j = 0; j < 5; j++) {
-        if((i === 1 && j === 0) || (i === 1 && j === 4) || (i === 2 && j === 1) || (i === 2 && j === 3) || (i === 3 && j === 2)|| (i === 4 && j === 1)|| (i === 4 && j === 3)|| (i === 5 && j === 0)|| (i === 5 && j === 4)){
-            card2 += "<td class='violet'>" + bingo[i][j] + "</td>";
-        }else{
-            card2 += "<td>" + bingo[i][j] + "</td>";
-        }
-      
+// bingo con X
+function aplicarPatron(patron, color) {
+    let card = "<thead><tr>";
+    for (let filass = 0; filass < 5; filass++) {
+        card += "<th>" + bingo[0][filass] + "</th>";
     }
-    card2 += "</tr>"; // cierra '<tr>'
-  }
-  card2 += "</tbody>";
-  //fin primera X
+    card += "</tr></thead><tbody>";
 
-
-  //tres X
-  card3 += "<thead><tr>";
-for (let i = 0; i < 5; i++) { // solo itera las 5 columnas del header
-    card3 += "<th>" + bingo[0][i] + "</th>";
-  }
-  card3 += "</tr></thead>";
-  
-  card3 += "<tbody>";
-  for (let i = 1; i < 6; i++) { // Inicia en la fila 1 (la segunda fila)
-    card3 += "<tr>";
-    for (let j = 0; j < 5; j++) {
-        if((i === 1 && j === 0) || (i === 1 && j === 2) || (i === 2 && j === 1) || (i === 3 && j === 0) || (i === 3 && j === 2)||(i === 3 && j === 0) || (i === 3 && j === 2) || (i === 4 && j === 1) || (i === 5 && j === 0) || (i === 5 && j === 2) || (i===1 && j===4)|| (i===2 && j===3)|| (i===3 && j===4)){
-            card3 += "<td class='green'>" + bingo[i][j] + "</td>";
-        }else{
-            card3 += "<td>" + bingo[i][j] + "</td>";
+    for (let filass = 1; filass < 6; filass++) {
+        card += "<tr>";
+        for (let columnass = 0; columnass < 5; columnass++) {
+            //some() es un método de JavaScript que itera sobre los elementos de un arreglo.
+            //el método some() es para verificar si la celda actual está en el patrón.
+            if (patron.some(celda => celda.filass === filass && celda.columnass === columnass)) { 
+                card += `<td class='${color}'>${bingo[filass][columnass]}</td>`;
+            } else {
+                card += `<td>${bingo[filass][columnass]}</td>`;
+            }
         }
-      
+        card += "</tr>";
     }
-    card3 += "</tr>"; // cierra '<tr>'
-  }
-  card3 += "</tbody>";
-  //fin tres equis
+    card += "</tbody>";
+    return card;
+}
+// fin bingo X
 
-
-  //bingo solo color B
-  card4 += "<thead><tr>";
-for (let i = 0; i < 5; i++) { // solo itera las 5 columnas del header
-    if(i === 0 ){
-        card4 += "<th class='red'>" + bingo[0][i] + "</th>";
+// Inicio Bingo B I N G O
+function bingoLetras(fila, color) {
+    let card4 = "<thead><tr>";
+    for (let filass = 0; filass < 5; filass++) {
+        if(filass === fila ){
+        card4 += `<th class='${color}'>${bingo[0][filass]}</th>`;
     }else{
-        card4 += "<th>" + bingo[0][i] + "</th>";
+        card4 += `<th>${bingo[0][filass]}</th>`;
     }
-  }
-  card4 += "</tr></thead>";
-  
-  card4 += "<tbody>";
-  for (let i = 1; i < 6; i++) { // Inicia en la fila 1 (la segunda fila)
-    card4 += "<tr>";
-    for (let j = 0; j < 5; j++) {
-        if(j === 0 ){
-            card4 += "<td class='red'>" + bingo[i][j] + "</td>";
-        }else{
-            card4 += "<td>" + bingo[i][j] + "</td>";
+    }
+    card4 += "</tr></thead><tbody>";
+
+    for (let filass = 1; filass < 6; filass++) {
+        card4 += "<tr>";
+        for (let columnass = 0; columnass < 5; columnass++) {
+            if (columnass=== fila) {
+                card4 += `<td class='${color}'>${bingo[filass][columnass]}</td>`;
+            } else {
+                card4 += `<td>${bingo[filass][columnass]}</td>`;
+            }
         }
-      
+        card4 += "</tr>";
     }
-    card4 += "</tr>"; // cierra '<tr>'
-  }
-  card4 += "</tbody>";
-  //fin bingo b
-
-
-  //bingo I
-  card5 += "<thead><tr>";
-for (let i = 0; i < 5; i++) { // solo itera las 5 columnas del header
-    if(i === 1 ){
-        card5 += "<th class='yellow'>" + bingo[0][i] + "</th>";
-    }else{
-        card5 += "<th>" + bingo[0][i] + "</th>";
-    }
-  }
-  card5 += "</tr></thead>";
-  
-  card5 += "<tbody>";
-  for (let i = 1; i < 6; i++) { // Inicia en la fila 1 (la segunda fila)
-    card5 += "<tr>";
-    for (let j = 0; j < 5; j++) {
-        if(j === 1 ){
-            card5 += "<td class='yellow'>" + bingo[i][j] + "</td>";
-        }else{
-            card5 += "<td>" + bingo[i][j] + "</td>";
-        }
-      
-    }
-    card5 += "</tr>"; // cierra '<tr>'
-  }
-  card5 += "</tbody>";
-  //fin bingo I
-
-
-  //inicio N
-  card6 += "<thead><tr>";
-  for (let i = 0; i < 5; i++) { // solo itera las 5 columnas del header
-      if(i === 2 ){
-          card6 += "<th class='green'>" + bingo[0][i] + "</th>";
-      }else{
-          card6 += "<th>" + bingo[0][i] + "</th>";
-      }
-    }
-    card6 += "</tr></thead>";
-    
-    card6 += "<tbody>";
-    for (let i = 1; i < 6; i++) { // Inicia en la fila 1 (la segunda fila)
-      card6 += "<tr>";
-      for (let j = 0; j < 5; j++) {
-          if(j === 2 ){
-              card6 += "<td class='green'>" + bingo[i][j] + "</td>";
-          }else{
-              card6 += "<td>" + bingo[i][j] + "</td>";
-          }
-        
-      }
-      card6 += "</tr>"; // cierra '<tr>'
-    }
-    card6 += "</tbody>";
-  //fin N
-
-
-  //Inicio G
-  card7 += "<thead><tr>";
-  for (let i = 0; i < 5; i++) { // solo itera las 5 columnas del header
-      if(i === 3 ){
-          card7 += "<th class='blue'>" + bingo[0][i] + "</th>";
-      }else{
-          card7 += "<th>" + bingo[0][i] + "</th>";
-      }
-    }
-    card7 += "</tr></thead>";
-    
-    card7 += "<tbody>";
-    for (let i = 1; i < 6; i++) { // Inicia en la fila 1 (la segunda fila)
-      card7 += "<tr>";
-      for (let j = 0; j < 5; j++) {
-          if(j === 3 ){
-              card7 += "<td class='blue'>" + bingo[i][j] + "</td>";
-          }else{
-              card7 += "<td>" + bingo[i][j] + "</td>";
-          }
-        
-      }
-      card7 += "</tr>"; //cierra '<tr>'
-    }
-    card7 += "</tbody>";
-  //Fin G
-
-
-  //Inicio O
-  card8 += "<thead><tr>";
-  for (let i = 0; i < 5; i++) { // solo itera las 5 columnas del header
-      if(i === 4 ){
-          card8 += "<th class='violet'>" + bingo[0][i] + "</th>";
-      }else{
-          card8 += "<th>" + bingo[0][i] + "</th>";
-      }
-    }
-    card8 += "</tr></thead>";
-    
-    card8 += "<tbody>";
-    for (let i = 1; i < 6; i++) { // Inicia en la fila 1 (la segunda fila)
-      card8 += "<tr>";
-      for (let j = 0; j < 5; j++) {
-          if(j === 4 ){
-              card8 += "<td class='violet'>" + bingo[i][j] + "</td>";
-          }else{
-              card8 += "<td>" + bingo[i][j] + "</td>";
-          }
-        
-      }
-      card8 += "</tr>"; // cierra '<tr>'
-    }
-    card8 += "</tbody>";
-  //Fin O
+    card4 += "</tbody>";
+    return card4;
+}
 
 
   document.getElementById('bingou').innerHTML = card;
-  document.getElementById('bingou2').innerHTML = card2;
-  document.getElementById('bingou3').innerHTML = card3;
-  document.getElementById('bingou4').innerHTML = card4;
-  document.getElementById('bingou5').innerHTML = card5;
-  document.getElementById('bingou6').innerHTML = card6;
-  document.getElementById('bingou7').innerHTML = card7;
-  document.getElementById('bingou8').innerHTML = card8;
+// Cartón con una X
+document.getElementById('bingou2').innerHTML = aplicarPatron(xPatrones[0], 'violet');
+// Cartón con tres X
+document.getElementById('bingou3').innerHTML = aplicarPatron(xPatrones[1], 'green');
+  document.getElementById('bingou4').innerHTML = bingoLetras(0,'red');
+  document.getElementById('bingou5').innerHTML = bingoLetras(1,'yellow');
+  document.getElementById('bingou6').innerHTML = bingoLetras(2,'green');
+  document.getElementById('bingou7').innerHTML = bingoLetras(3,'blue');
+  document.getElementById('bingou8').innerHTML = bingoLetras(4,'violet');
   
 })
 
+let intervaloParpadeo;
+let estaParpadeando = false;
+
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'f' || event.key === 'F') {
+        if (!estaParpadeando) {
+            iniciarParpadeo();
+        }
+    }
+});
+
+document.addEventListener('keyup', function(event) {
+    if (event.key === 'f' || event.key === 'F') {
+        pararParpadeo();
+    }
+});
+
+function iniciarParpadeo() {
+    estaParpadeando = true;
+    intervaloParpadeo = setInterval(alternarColor, 300); // Parpadea cada 300ms
+}
+
+function pararParpadeo() {
+    estaParpadeando = false;
+    clearInterval(intervaloParpadeo);
+    resetearColor();
+}
+
+function alternarColor() {
+    const xElementos = document.querySelectorAll('.violet, .green, .red, .blue, .yellow'); // Selecciona todas las celdas X
+    xElementos.forEach(elementos => {
+        elementos.style.backgroundColor = elementos.style.backgroundColor === 'lawngreen' ? '' : 'lawngreen';
+    });
+}
+
+function resetearColor() {
+    const xElementos = document.querySelectorAll('.violet, .green, .red, .blue, .yellow');
+    xElementos.forEach(elementos => {
+        elementos.style.backgroundColor = '';
+    });
+}
+/*
+patron:  una matriz o arreglo de objetos, donde cada objeto representa una celda con propiedades i y j (coordenadas).
+celda: Un objeto dentro del arreglo patron.
+*/
