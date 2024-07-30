@@ -3,23 +3,44 @@ let cont3=0
 let numx=[];
 let ramdomm;
 let numExisten=[]
+function generarPatronX(filas, columnas) {
+    let patron = [];
+    for (let filass = 1; filass <= filas; filass++) {
+        for (let columnass = 0; columnass < columnas; columnass++) {
+            // Diagonal principal
+            if (filass - 1 === columnass) {
+                patron.push({filaCelda: filass, columnaCelda: columnass});
+            }else{
+                null
+            }
+            // Diagonal secundaria
+            //fila= 1-1=0    columnas= 5-1-4= 0
+          /* Esta condición es verdadera para celdas donde el indice de fila (- 1) 
+             es igual al indice de columna invertido (columnas - 1 - columnass). 
+           */  
+            if (filass - 1 === columnas - 1 - columnass) {
+                patron.push({filaCelda: filass, columnaCelda: columnass});
+            }else{
+                null
+            }
+        }
+    }
+    return patron;
+}
+
+function generarPatronTresX() {
+    return [
+        {filaCelda: 1, columnaCelda: 0}, {filaCelda: 1, columnaCelda: 2}, {filaCelda: 1, columnaCelda: 4},
+        {filaCelda: 2, columnaCelda: 1}, {filaCelda: 2, columnaCelda: 3},
+        {filaCelda: 3, columnaCelda: 0}, {filaCelda: 3, columnaCelda: 2}, {filaCelda: 3, columnaCelda: 4},
+        {filaCelda: 4, columnaCelda: 1}, 
+        {filaCelda: 5, columnaCelda: 0}, {filaCelda: 5, columnaCelda: 2}
+    ];
+}
+// Generar patrones
 const xPatrones = [
-    // Patrón para una X
-    [
-        {filass: 1, columnass: 0}, {filass: 1, columnass: 4},
-        {filass: 2, columnass: 1}, {filass: 2, columnass: 3},
-        {filass: 3, columnass: 2},
-        {filass: 4, columnass: 1}, {filass: 4, columnass: 3},
-        {filass: 5, columnass: 0}, {filass: 5, columnass: 4}
-    ],
-    // Patrones para tres X
-    [
-        {filass: 1, columnass: 0}, {filass: 1, columnass: 2}, {filass: 1, columnass: 4},
-        {filass: 2, columnass: 1}, {filass: 2, columnass: 3},
-        {filass: 3, columnass: 0}, {filass: 3, columnass: 2}, {filass: 3, columnass: 4},
-        {filass: 4, columnass: 1},
-        {filass: 5, columnass: 0}, {filass: 5, columnass: 2}
-    ]
+    generarPatronX(5, 5),
+    generarPatronTresX()
 ];
 document.addEventListener('DOMContentLoaded', function () {
 for (let filass = 0; filass < 6; filass++) {
@@ -27,18 +48,28 @@ for (let filass = 0; filass < 6; filass++) {
     for (let columnass = 0; columnass < 6; columnass++) {
         if(filass==0 && columnass==0){
             bingo[filass][columnass] = "B";
+        }else{
+            null
         }
         if(filass==0 && columnass==1){
             bingo[filass][columnass] = "I";
+        }else{
+            null
         }
         if(filass==0 && columnass==2){
             bingo[filass][columnass] = "N";
+        }else{
+            null
         }
         if(filass==0 && columnass==3){
             bingo[filass][columnass] = "G";
+        }else{
+            null
         }
         if(filass==0 && columnass==4){
             bingo[filass][columnass] = "O";
+        }else{
+            null
         }
         if(columnass==0 && filass>0){
             do {
@@ -74,6 +105,8 @@ for (let filass = 0; filass < 6; filass++) {
               } while (numExisten.includes(ramdomm));
               bingo[filass][columnass] = ramdomm;
               numExisten.push(ramdomm);
+        }else{
+            null
         }
     }
   }
@@ -110,7 +143,7 @@ function aplicarPatron(patron, color) {
         for (let columnass = 0; columnass < 5; columnass++) {
             //some() es un método de JavaScript que itera sobre los elementos de un arreglo.
             //el método some() es para verificar si la celda actual está en el patrón.
-            if (patron.some(celda => celda.filass === filass && celda.columnass === columnass)) { 
+            if (patron.some(celda => celda.filaCelda === filass && celda.columnaCelda === columnass)) { 
                 card += `<td class='${color}'>${bingo[filass][columnass]}</td>`;
             } else {
                 card += `<td>${bingo[filass][columnass]}</td>`;
@@ -171,13 +204,19 @@ document.addEventListener('keydown', function(event) {
     if (event.key === 'f' || event.key === 'F') {
         if (!estaParpadeando) {
             iniciarParpadeo();
+        }else{
+            null
         }
+    }else{
+        null
     }
 });
 
 document.addEventListener('keyup', function(event) {
     if (event.key === 'f' || event.key === 'F') {
         pararParpadeo();
+    }else{
+        null
     }
 });
 
